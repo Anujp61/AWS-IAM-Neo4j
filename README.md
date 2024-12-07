@@ -70,14 +70,13 @@ docker logs aws-iam-fetcher
 1. Run the application:   ```bash
    python main.py   ```
 
-   ![alt text](<images/Screenshot 2024-12-07 110252.png>)
+   ![alt text](<app/images/Screenshot 2024-12-07 110252.png>)
 
    - Neo4j Database
-
-   ![alt text](<images/Screenshot 2024-12-07 110330.png>)
+![alt text](<app/images/Screenshot 2024-12-07 110330.png>)
 
    - AWS IAM Users
-   ![alt text](<images/Screenshot 2024-12-07 111847.png>)
+   ![alt text](<app/images/Screenshot 2024-12-07 111847.png>)
 
 
 The code will:

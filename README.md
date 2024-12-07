@@ -1,6 +1,6 @@
 # AWS IAM User Management with Neo4j
 
-A Python application that fetches AWS IAM users and stores them in a Neo4j graph database.
+A Python code that fetches AWS IAM users and stores them in a Neo4j graph database.
 
 ## Prerequisites
 
@@ -49,7 +49,7 @@ A Python application that fetches AWS IAM users and stores them in a Neo4j graph
    ![alt text](<images/Screenshot 2024-12-07 111847.png>)
 
 
-The application will:
+The code will:
 - Fetch users from AWS IAM
 - Create nodes in Neo4j for each user
 - Establish relationships between users and their permissions

@@ -1,0 +1,41 @@
+version: "3.8"
+
+services:
+  neo4j:
+    image: neo4j:latest
+    container_name: neo4j
+    environment:
+      - NEO4J_AUTH=neo4j/password
+    ports:
+      - "7474:7474"  # HTTP Interface
+      - "7687:7687"  # Bolt Protocol
+    volumes:
+      - neo4j-data:/data
+      - neo4j-logs:/logs
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "curl", "-u", "neo4j:password", "-f", "http://localhost:7474"]
+      interval: 30s
+      retries: 3
+
+  app:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    container_name: aws-iam-fetcher
+    depends_on:
+      neo4j:
+        condition: service_healthy
+    env_file:
+      - /app/.env
+    networks:
+      - app-network
+
+volumes:
+  neo4j-data:
+  neo4j-logs:
+
+networks:
+  app-network:
+    driver: bridge

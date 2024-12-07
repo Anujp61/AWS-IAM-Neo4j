@@ -2,6 +2,37 @@
 
 A Python application that fetches AWS IAM users and stores them in a Neo4j graph database.
 
+## Using Docker Compose file 
+
+### Commands to Execute
+- Build and Start the Containers
+- Navigate to the project directory and execute:
+
+
+```
+docker-compose up --build
+```
+- This command builds and starts the services defined in docker-compose.yml.
+1. The neo4j container initializes the Neo4j database.
+2. The app container fetches AWS IAM users and injects them into Neo4j.
+3. The report container generates a report of injected users.
+
+#### Note: If you wish to run the containers in detached mode, append ```-d:```
+![alt text](<app/images/Screenshot 2024-12-07 144937.png>)
+![alt text](<app/images/Screenshot 2024-12-07 145032.png>)
+
+bash
+Copy code
+docker-compose up --build -d
+Check the Logs for AWS IAM Fetcher
+View the logs of the app container to verify user injection:
+
+bash
+Copy code
+docker logs aws-iam-fetcher
+
+
+##Using without Docker-Compose file 
 ## Prerequisites
 
 - Docker

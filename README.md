@@ -21,18 +21,15 @@ docker-compose up --build
 ![alt text](<app/images/Screenshot 2024-12-07 144937.png>)
 ![alt text](<app/images/Screenshot 2024-12-07 145032.png>)
 
-bash
-Copy code
-docker-compose up --build -d
-Check the Logs for AWS IAM Fetcher
-View the logs of the app container to verify user injection:
 
-bash
-Copy code
-docker logs aws-iam-fetcher
+- docker-compose up --build -d
+- Check the Logs for AWS IAM Fetcher
+- View the logs of the app container to verify user injection:
+
+- docker logs aws-iam-fetcher
 
 
-##Using without Docker-Compose file 
+## Using without Docker-Compose file 
 ## Prerequisites
 
 - Docker
